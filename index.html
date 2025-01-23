@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Dolce Goose</title>
+    <link rel="icon" href="photo_2025-01-04_15-52-31.jpg" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://static.tildacdn.com/tild3630-6231-4133-b161-386332303865/802625.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+header {
+    background: linear-gradient(90deg, #1f3d1f, #3e6b3e); /* Градиентный фон */
+    padding: 20px; /* Немного увеличиваем отступы */
+    text-align: center;
+    color: #ffffff; /* Белый текст для контраста */
+    font-size: 28px; /* Увеличенный размер текста */
+    font-weight: bold;
+    font-family: 'Arial', sans-serif; /* Чистый шрифт */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Добавляем тень */
+    text-transform: uppercase; /* Преобразуем текст в заглавные буквы */
+    position: sticky; /* Закрепляем хедер сверху */
+    top: 0;
+    z-index: 1000; /* Обеспечиваем видимость поверх других элементов */
+    border-bottom: 2px solid #a8d5a8; /* Разделяющая линия снизу */
+}
+
+        .navbar {
+    height: 100vh;
+    width: 250px;
+    background-color: #1f3d1f;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 90px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Добавляем тень */
+    border-right: 2px solid #a8d5a8; /* Граница для контраста */
+}
+
+.navbar img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #a8d5a8; /* Обводка вокруг изображения */
+    transition: transform 0.3s; /* Анимация при наведении */
+}
+
+.navbar img:hover {
+    transform: scale(1.1); /* Легкое увеличение изображения при наведении */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navbar ul li {
+    width: 100%;
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+.navbar ul li a {
+    display: block;
+    text-decoration: none;
+    color: #a8d5a8;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-left: 3px solid transparent; 
+    transition: all 0.3s; 
+}
+
+.navbar ul li a:hover {
+    background-color: #3e6b3e; 
+    border-left: 3px solid #a8d5a8; 
+    color: #ffffff;
+    padding-left: 25px;
+}
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #355e35;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: #d6efd6;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+    background-color: #1f3b1f; 
+    border-radius: 15px; 
+    padding: 40px;
+    width: 45%; 
+    color: #e5ffe5;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); 
+    border: 2px solid #4caf50; 
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #4caf50; 
+    padding-bottom: 10px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: #cfe9cf; 
+    font-weight: bold;
+    position: relative;
+}
+
+.modal-header h2::before {
+    content: "★"; 
+    color: #ffeb3b; 
+    margin-right: 10px;
+}
+
+.modal-header h2::after {
+    content: "⚘"; 
+    color: #ffeb3b;
+    margin-left: 10px;
+}
+
+.modal-close {
+    font-size: 26px;
+    cursor: pointer;
+    color: #d6efd6;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #a8d5a8;
+    transform: rotate(90deg);
+}
+
+.modal-close::before {
+    content: "";
+    color: inherit;
+}
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #3d5f3d;
+            color: white;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        #totalPrice {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #a8d5a8;
+        }
+
+        .order-button {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        h4 {
+    font: bold 2em Impact, sans-serif; 
+    -webkit-text-stroke: 2px black; 
+    color: white; 
+    text-align: center;
+    margin: 20px 0; 
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        Добро пожаловать в наше Кафе!
+    </header>
+
+    <aside class="navbar">
+        <img src="photo_2025-01-04_15-52-31.jpg" alt="Лого">
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="review.html">Отзывы</a></li>
+            <li><a href="menu.html">Меню</a></li>
+            <li><a href="o nas.html">О нас</a></li>
+        </ul>
+    </aside>
+
+    <div class="content">
+        <section id="home">
+            <h4>Главная</h4>
+            <h4>Добро пожаловать в наше уютное кафе, еда со всего мира</h4>
+        </section>
+
+        <section id="menu">
+            <h4>Блюда</h4>
+            <div class="card-container">
+                <div class="card" onclick="showDetails('Лобстер на гриле', 'Свежий лобстер, приготовленный на гриле, с легкой приправой и ароматными травами. Время приготовления: 20 минут. Подается с гарниром из запеченных овощей и сливочным соусом. Отличный выбор для любителей морепродуктов.', 1899)">
+                    <img src="image/lobster.jpg" alt="Лобстер">
+                    <p>Лобстер на гриле<br>1899₽</p>
+                </div>
+                <div class="card" onclick="showDetails('Лосось на гриле', 'Сочный лосось, приготовленный на гриле, с медово-горчичным соусом и свежими зеленью. Время приготовления: 15 минут. Идеален для здорового питания и поклонников рыбы.', 1599)">
+                    <img src="image/losos.jpg" alt="Лосось">
+                    <p>Лосось на гриле<br>1599₽</p>
+                </div>
+                <div class="card" onclick="showDetails('Чизкейк', 'Нежный чизкейк с ванильным кремом и фруктами. Тонкая текстура, идеально сбалансированный вкус. Время приготовления: 10 минут. Сладкое наслаждение для ценителей десертов.', 499)">
+                    <img src="image/chesscake.jpg" alt="Чизкейк">
+                    <p>Чизкейк<br>499₽</p>
+                </div>
+                <div class="card" onclick="showDetails('Салат Цезарь', 'Классический салат с курицей, листьями свежего салата, помидорами и пармезаном. Время приготовления: 10 минут. Идеальный вариант для легкого обеда или ужина.', 699)">
+                    <img src="image/salatcesar.jpg" alt="Салат Цезарь">
+                    <p>Салат Цезарь<br>699₽</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="drinks">
+            <h4>Напитки</h4>
+            <div class="card-container">
+                <div class="card" onclick="showDetails('Кофе капучино', 'Классический капучино с нежной пенкой из молока и эспрессо. Идеально для утреннего пробуждения или небольшого перерыва. Время приготовления: 5 минут.', 299)">
+                    <img src="image/cappuchino.jpg" alt="Капучино">
+                    <p>Кофе капучино<br>299₽</p>
+                </div>
+                <div class="card" onclick="showDetails('Чай зелёный', 'Свежезаваренный зелёный чай с ароматом жасмина и трав. Легкий и утоляющий жажду. Время приготовления: 3 минуты.', 199)">
+                    <img src="image/zelenychai.jpg" alt="Чай">
+                    <p>Чай зелёный<br>199₽</p>
+                </div>
+                <div class="card" onclick="showDetails('Американо', 'Классический чёрный кофе с мягким вкусом и богатым ароматом. Время приготовления: 5 минут. Отличный выбор для любителей крепкого кофе.', 199)">
+                    <img src="image/image1_0.jpg" alt="Американо">
+                    <p>Американо<br>199₽</p>
+                </div>
+                <div class="card" onclick="showDetails('Морс ягодный', 'Свежий ягодный морс с добавлением натурального меда. Натуральный вкус и витаминная поддержка. Время приготовления: 3 минуты.', 149)">
+                    <img src="image/sok.jpg" alt="Морс">
+                    <p>Морс ягодный<br>149₽</p>
+                </div>
+            </div>
+        </section>
+        
+        
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Вход</h2>
+                <span class="modal-close" onclick="closeModal('loginModal')">&times;</span>
+            </div>
+            <input type="text" id="loginUsername" placeholder="Логин">
+            <input type="password" id="loginPassword" placeholder="Пароль">
+            <button onclick="login()">Войти</button>
+        </div>
+    </div>
+
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="detailsTitle">Детали</h2>
+                <span class="modal-close" onclick="closeModal('detailsModal')">&times;</span>
+            </div>
+            <p id="detailsDescription">Описание блюда</p>
+            <p id="detailsPrice">Цена: 0₽</p>
+            <button class="order-button" onclick="orderItem()">Заказать</button>
+        </div>
+    </div>
+
+    <script>
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function showDetails(title, description, price) {
+            document.getElementById('detailsTitle').innerText = title;
+            document.getElementById('detailsDescription').innerText = description;
+            document.getElementById('detailsPrice').innerText = `Цена: ${price}₽`;
+            document.getElementById('detailsModal').style.display = 'flex';
+        }
+
+        function login() {
+            closeModal('loginModal');
+            alert('Добро пожаловать!');
+        }
+
+        function orderItem() {
+            alert('Блюдо добавлено в заказ!');
+            closeModal('detailsModal');
+        }
+
+        window.onload = () => {
+            document.getElementById('loginModal').style.display = 'flex';
+        };
+    </script>
+</body>
+</html>

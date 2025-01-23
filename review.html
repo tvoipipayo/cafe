@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="photo_2025-01-04_15-52-31.jpg" type="image/png">
+    <title>Cafe Dolce Goose</title>
+</head>
+    <style>
+         body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #2e4b2e; 
+    color: #000;
+}
+
+header {
+    background: linear-gradient(90deg, #1f3d1f, #3e6b3e); 
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px; 
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    text-transform: uppercase; 
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    border-bottom: 2px solid #a8d5a8; 
+}
+
+        .navbar {
+    height: 100vh;
+    width: 250px;
+    background-color: #1f3d1f;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 90px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); 
+    border-right: 2px solid #a8d5a8;
+}
+
+.navbar img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #a8d5a8; 
+    transition: transform 0.3s; 
+}
+
+.navbar img:hover {
+    transform: scale(1.1); 
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navbar ul li {
+    width: 100%;
+    text-align: left; 
+}
+
+.navbar ul li a {
+    display: block;
+    text-decoration: none;
+    color: #a8d5a8;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-left: 3px solid transparent; 
+    transition: all 0.3s; 
+}
+
+.navbar ul li a:hover {
+    background-color: #3e6b3e; 
+    border-left: 3px solid #a8d5a8;
+    color: #ffffff; 
+    padding-left: 25px; 
+}
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2  0px; 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+.card {
+    flex: 0 0 48%; 
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #a8d5a8;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #116911;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.card img {
+    width: 80px; 
+    height: auto;
+    border: 3px solid #a8d5a8; 
+    border-radius: 10px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info p {
+    margin: 0;
+    font-size: 14px; 
+}
+
+h2#average-rating {
+    position: absolute;
+    top: 90px;      
+    left: 1100px;         
+    color: white;      
+    font-size: 1.5em;   
+    margin: 0;          
+}
+
+
+    </style>
+<body>
+    <header>
+        Добро пожаловать в наше Кафе!
+    </header>
+    <aside class="navbar">
+        <img src="photo_2025-01-04_15-52-31.jpg" alt="Лого">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="menu.html">Меню</a></li>
+            <li><a href="o nas.html">О нас</a></li>
+        </ul>
+    </aside>
+    <h2 id="average-rating">Средняя оценка: 4.7★</h2>
+<div class="card-container">
+    <div class="card-container">
+        <div class="card">
+            <img src="image/woman1.jpg" alt="Фото 1">
+            <div class="card-info">
+                <p>Комментарий: Это невероятно вкусно! Каждая деталь блюда продумана, а вкус просто восхитительный</p>
+                <p>Оценка: ★★★★☆</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/man2.jpg" alt="Фото 2">
+            <div class="card-info">
+                <p>Комментарий: Аромат потрясающий, а вкус превзошёл все ожидания – настоящее удовольствие для гурмана!</p>
+                <p>Оценка: ★★★★☆</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/woman2.jpg" alt="Фото 3">
+            <div class="card-info">
+                <p>Комментарий: Свежие ингредиенты и отлично сбалансированный вкус – настоящая находка для гурманов!</p>
+                <p>Оценка: ★★★★★</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/man1.jpg" alt="Фото 4">
+            <div class="card-info">
+                <p>Комментарий: Качество ингредиентов оставляет желать лучшего, а подача была неаккуратной</p>
+                <p>Оценка: ★★★☆☆</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/girl1.jpg" alt="Фото 5">
+            <div class="card-info">
+                <p>Комментарий:  Порция большая, а подача просто потрясающая – даже глаз радуется!</p>
+                <p>Оценка: ★★★★☆</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/man3.jpg" alt="Фото 6">
+            <div class="card-info">
+                <p>Комментарий: Блюдо оказалось слишком пересоленным, вкус почти полностью потерялся. </p>
+                <p>Оценка: ★★★☆☆</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/woman3.jpg" alt="Фото 7">
+            <div class="card-info">
+                <p>Комментарий:Настоящий кулинарный шедевр – видно, что приготовлено с любовью и вниманием к деталям.</p>
+                <p>Оценка: ★★★★★</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/grandma1.jpg" alt="Фото 8">
+            <div class="card-info">
+                <p>Комментарий: Идеальная текстура и изумительное сочетание ароматов, хочется заказать это снова!</p>
+                <p>Оценка: ★★★★★</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
